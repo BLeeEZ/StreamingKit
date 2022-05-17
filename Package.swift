@@ -3,6 +3,9 @@ import PackageDescription
 
 let package = Package(
     name: "StreamingKit",
+    platforms: [
+        .iOS(.v10)
+    ],
     products: [
         .library(name: "StreamingKit", targets: ["StreamingKit"]),
     ],
@@ -10,6 +13,9 @@ let package = Package(
     targets: [
         .target(
             name: "StreamingKit",
-            dependencies: []),
+            publicHeadersPath: "",
+            linkerSettings: [
+                .linkedFramework("Foundation"),
+            ]),
     ]
 )
